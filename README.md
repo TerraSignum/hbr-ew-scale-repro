@@ -3,7 +3,7 @@
 **HBR electroweak-scale reproduction with defect-field two-loop correction
 on the FL-S^4 bounce background.**
 
-[![CI: reproduce-ew-scale](https://github.com/[anonymized]/hbr-ew-scale-repro/actions/workflows/reproduce.yml/badge.svg)](https://github.com/[anonymized]/hbr-ew-scale-repro/actions/workflows/reproduce.yml)
+[![CI: reproduce-ew-scale](https://github.com/TerraSignum/hbr-ew-scale-repro/actions/workflows/reproduce.yml/badge.svg)](https://github.com/TerraSignum/hbr-ew-scale-repro/actions/workflows/reproduce.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 This repository reproduces the electroweak vacuum expectation value `v_EW`
@@ -52,7 +52,7 @@ a sharply defined, reproducible electroweak-scale calculation:
 ## Installation (Windows PowerShell)
 
 ```powershell
-git clone https://github.com/[anonymized]/hbr-ew-scale-repro.git
+git clone https://github.com/TerraSignum/hbr-ew-scale-repro.git
 cd hbr-ew-scale-repro
 
 py -3.11 -m venv .venv
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 ## Installation (POSIX)
 
 ```bash
-git clone https://github.com/[anonymized]/hbr-ew-scale-repro.git
+git clone https://github.com/TerraSignum/hbr-ew-scale-repro.git
 cd hbr-ew-scale-repro
 
 python3.11 -m venv .venv
