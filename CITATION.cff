@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "HBR electroweak-scale reproduction package"
+message: "If you use this software or data, please cite it using the metadata below."
+authors:
+  - family-names: Bucciarelli
+    given-names: Sandro
+version: 0.1.0
+date-released: 2026-04-26
+license: MIT
+repository-code: "https://github.com/[anonymized]/hbr-ew-scale-repro"
+abstract: >-
+  A reproducible Python package implementing the Hierarchy-Bridge-Relation
+  (HBR) electroweak-scale calculation with a defect-field two-loop correction
+  on the FL-S^4 bounce background. Reproduces v_EW = 246.2186 GeV (canonical
+  precision value, FULL MS-bar Davydychev-Tausk path) and v_EW = 246.2103 GeV
+  (robustness value, four-path mean), both within PDG uncertainty
+  246.22 +/- 0.07 GeV. The result is conditional on a T-parity source axiom
+  that identifies the defect field with the bounce negative mode.
+keywords:
+  - electroweak-scale
+  - hierarchy-bridge-relation
+  - two-loop
+  - defect-field
+  - FL-S4-bounce
+  - reproducibility
+  - particle-physics
+references:
+  - type: article
+    title: "A defect-field two-loop correction to the HBR electroweak scale"
+    authors:
+      - family-names: Bucciarelli
+        given-names: Sandro
+    year: 2026
+    notes: "Accompanying preprint; see paper/manuscript.pdf in this repository."

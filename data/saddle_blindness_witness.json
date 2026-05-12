@@ -1,0 +1,29 @@
+{
+  "description": "Saddle-first reproducer chain blindness witness for the HBR-EW-scale repro.",
+  "protocol": "The S^4-bounce solver and its output S_bounce are committed strictly before the EW-scale matching script consumes them. Any re-determination of S_bounce must commit the new saddle output before the matching is re-run; otherwise the prospective protocol (tests/test_saddle_blindness_protocol.py) rejects the rebuild.",
+  "saddle_files": [
+    "src/audit_eta_S_high_precision.py",
+    "outputs/audit_eta_S_high_precision.json"
+  ],
+  "matching_files": [
+    "src/recompute_ew_scale.py",
+    "data/ew_scale_inputs.json"
+  ],
+  "file_hashes": {
+    "src/audit_eta_S_high_precision.py": {
+      "sha256": "adc87ebfc2869d1834598b358cc26eb0af2387b756506730fdca3468ce5ae45f",
+      "mtime_unix": 1777973280.111227
+    },
+    "src/recompute_ew_scale.py": {
+      "sha256": "fa4a52dd6e9b72d943a3d3f63e55998bb4308e9d456be1d41fe0a822f5b9eb6e",
+      "mtime_unix": 1777305707.6104834
+    },
+    "data/ew_scale_inputs.json": {
+      "sha256": "a86c6f9450f7e903ec33fa1a1e6f504e67c01e146829d1ea45b0383427fcc941",
+      "mtime_unix": 1778331339.8886259
+    }
+  },
+  "frozen_S_bounce": 37.995389,
+  "protocol_invariant": "t_matching > t_saddle on every re-determination",
+  "stand": "2026-05-10"
+}

@@ -1,0 +1,49 @@
+{
+  "method": "eta_S_high_precision_independent_audit",
+  "stand": "2026-05-05",
+  "target_blind": true,
+  "potential": {
+    "v": 1.0,
+    "lambda": 1.0
+  },
+  "bvp_resolutions": [
+    {
+      "method": "bvp",
+      "resolution": 200,
+      "S_bounce": 6.579736170418324,
+      "eta_S": 0.5235987678813069
+    },
+    {
+      "method": "bvp",
+      "resolution": 400,
+      "S_bounce": 6.57973626138837,
+      "eta_S": 0.5235987751204731
+    },
+    {
+      "method": "bvp",
+      "resolution": 800,
+      "S_bounce": 6.579736267019433,
+      "eta_S": 0.5235987755685788
+    }
+  ],
+  "independent_quadratures_N800": [
+    {
+      "quadrature": "simpson",
+      "S_bounce": 6.579736267019433,
+      "eta_S": 0.5235987755685788
+    },
+    {
+      "quadrature": "trapezoid",
+      "S_bounce": 6.579736267412564,
+      "eta_S": 0.5235987755998632
+    },
+    {
+      "quadrature": "gauss_legendre_K64",
+      "S_bounce": 6.5797362673929145,
+      "eta_S": 0.5235987755982996
+    }
+  ],
+  "negative_mode_eigenvalues": null,
+  "sensitivity_note": "delta v/v = -delta S_bounce = -4*pi delta eta_S. The external benchmark offset of -4.43e-6 corresponds to delta eta_S = -3.52e-7 (seventh-decimal-digit). This is below the BVP/quadrature method spread reported above; the limiting uncertainty in the EW closure is the independent saddle evaluation.",
+  "non_target_blind_note": "This audit is target-blind: eta_S is computed independently of v_EW; no parameter is tuned to match the MuLan benchmark."
+}

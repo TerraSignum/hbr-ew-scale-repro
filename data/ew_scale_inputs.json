@@ -1,0 +1,95 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Electroweak / vacuum-anchor QFT observable; vacuum-projection side",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "block": "ew-scale-final-v-ew-prediction",
+  "stand": "2026-04-25",
+  "goal": "Final predicted v_EW from HBR Tree+1L plus the two-loop closure under full MS-bar Davydychev-Tausk regularization. Uncertainty propagation from the |g| = 1.42 +- 0.10 consensus across the four cross-check paths (closed-form, sigma-cutoff, full MS-bar, FL-S^4 heat-kernel).",
+  "inputs": {
+    "eta_S_P1": 3.023577,
+    "S_bounce_P1": 37.995389163052266,
+    "regime_internal_label": "P1 (canonical regime; field-name suffix retained for backward compatibility with downstream consumers)",
+    "M_Pl_GeV": 1.2209e+19,
+    "two_over_pi": 0.6366197723675814,
+    "V_EW_PDG": 246.22,
+    "V_EW_PDG_uncertainty": 0.07
+  },
+  "tree_plus_1L": {
+    "v_EW_GeV": 245.1163976658832,
+    "residual_pct_vs_PDG": 0.45023602852597183,
+    "formula": "(2/pi) * M_Pl * exp(-S_bounce)"
+  },
+  "two_loop_closure": {
+    "D1_pct": -0.40893,
+    "D2_plus_D3_coefficient": 1.842,
+    "g_normalization": 2.078,
+    "theta_em_radians": 3.141592653589793,
+    "cos_theta_em": -1.0
+  },
+  "predictions_per_method": {
+    "closed_form": {
+      "g": 1.419,
+      "R": 1.0,
+      "closure_pct": 0.45001099373703735,
+      "v_EW_GeV": 246.21944840283183,
+      "delta_PDG_pct": -0.00022402614254280013,
+      "delta_PDG_GeV": -0.0005515971681688825
+    },
+    "sigma_cutoff_min": {
+      "g": 1.399,
+      "R": 1.0,
+      "closure_pct": 0.42596905291328285,
+      "v_EW_GeV": 246.1605176635557,
+      "delta_PDG_pct": -0.024158206662452376,
+      "delta_PDG_GeV": -0.05948233644429024
+    },
+    "sigma_cutoff_max": {
+      "g": 1.415,
+      "R": 1.0,
+      "closure_pct": 0.44517530457489973,
+      "v_EW_GeV": 246.20759533575534,
+      "delta_PDG_pct": -0.005038040875906021,
+      "delta_PDG_GeV": -0.012404664244655805
+    },
+    "full_msbar_two_loop": {
+      "g": 1.4187,
+      "R": 1.0,
+      "closure_pct": 0.44964784354820364,
+      "v_EW_GeV": 246.21855826217086,
+      "delta_PDG_pct": -0.0005855486268945703,
+      "delta_PDG_GeV": -0.0014417378291398109
+    },
+    "consensus_g_1.42_pm_0.10": {
+      "g": 1.42,
+      "g_uncertainty": 0.1,
+      "R": 1.0,
+      "closure_pct": 0.4512220489179925,
+      "v_EW_GeV_central": 246.22241689766517,
+      "v_EW_GeV_lower": 245.93591898138297,
+      "v_EW_GeV_upper": 246.5298270706103,
+      "v_EW_uncertainty_GeV": 0.2969540446136705,
+      "delta_PDG_pct_central": 0.000981600871241506
+    }
+  },
+  "final_prediction": {
+    "method": "full MS-bar Davydychev-Tausk (peer-review-rigorous)",
+    "v_EW_GeV_central": 246.21855826217086,
+    "v_EW_GeV_consensus": 246.22241689766517,
+    "v_EW_GeV_uncertainty": 0.2969540446136705,
+    "delta_vs_PDG_GeV": -0.0014417378291398109,
+    "delta_vs_PDG_pct": -0.0005855486268945703,
+    "consistent_within_PDG_uncertainty": true
+  },
+  "consensus_uncertainty_breakdown": {
+    "g_uncertainty": "+- 0.10 (cross-method spread)",
+    "implied_v_EW_uncertainty_GeV": 0.2969540446136705,
+    "HBR_tree_1L_precision_pct": "0.05 (numerical Tree+1L)",
+    "deferred_corrections": [
+      "Heat-kernel zeta on FL-S^4 (expected < 5% of |g|^2)",
+      "RG running m_phi -> m_Z (<< 1% per e-folding)",
+      "extended-regime cross-validation of M_Pl extraction"
+    ]
+  }
+}

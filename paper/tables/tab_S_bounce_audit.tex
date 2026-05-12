@@ -1,0 +1,17 @@
+\begin{tabular}{@{}l p{0.16\textwidth} p{0.36\textwidth} p{0.20\textwidth} p{0.16\textwidth}@{}}
+\toprule
+Step & Item & Specification & Source / verified by & Value \\
+\midrule
+(i) & Field content & two real scalars $\varphi$ (carrier) and $\Xi$ (unique negative mode) & Sec.~\ref{sec:bounce-action} step (i) & --- \\
+(ii) & Background geometry & Euclidean $S^{4}$, FL coordinates \eqref{eq:S4metric} & Sec.~\ref{sec:bounce-action} step (ii); \cite{CamporesiHiguchi1996} & $\xi\!=\!1/6$ \\
+(iii) & Euclidean action & Coleman--Callan-Coleman action \eqref{eq:SE} with potential \eqref{eq:Vphi} & \cite{Coleman1977,CallanColeman1977} & --- \\
+(iv) & Boundary conditions & $\varphi_{B}'(0)\!=\!0$; $\varphi_{B}(\sigma\!\to\!\pi)\!\to\!\varphi_{\rm false}$ & Sec.~\ref{sec:bounce-action} step (iv) \eqref{eq:BCs} & --- \\
+(v) & EOM & FL-conformal Euler-Lagrange Eq.~\eqref{eq:EOM} on $S^{4}$ & Sec.~\ref{sec:bounce-action} step (v) & --- \\
+(vi) & Saddle search & Sommerfeld integral $\eta_{S}\!=\!\frac{1}{2\pi}\!\int\!\!\sqrt{2V_{\rm eff}/\rho_{0}^{2}}\,d\sigma$ & \path|src/recompute_ew_scale.py| & $\eta_{S}\!=\!3.023577$ \\
+(vii) & Bounce action & $\Sb\!=\!4\pi\eta_{S}$ (Coleman normalisation) & Eq.~\eqref{eq:etaS-num} & $\Sb\!=\!37.995389$ \\
+(viii) & Unique negative mode & single normalisable $u_{0}$; second-variation operator has unique negative eigenvalue & Sec.~\ref{sec:wick}; \cite{Coleman1977} & --- \\
+(ix) & Saddle vs.\ back-fit guard & $\eta_{S}$ integration uses only $V$, $\rho_{0}$, $V_{0}$, $m_{\varphi}^{\rm op,2}\rho_{0}^{2}\!=\!-4$; no $\vEW$ input & Sec.~\ref{sec:bounce-action} step (vii); F1 & $[3.019,\,3.027]$ \\
+(x) & Numerical uncertainty & residual of saddle integration at bundled grid resolution & Eq.~\eqref{eq:etaS-num} & $\Delta\eta_{S}\!\sim\!5\!\times\!10^{-6}$ \\
+(xi) & T-parity source axiom & $\eta_{T}(\Xi)\!=\!-1$ from $S_{b}\!>\!0$ + CPT + hermiticity & Theorem~\ref{thm:t-parity-uniqueness} & --- \\
+\bottomrule
+\end{tabular}

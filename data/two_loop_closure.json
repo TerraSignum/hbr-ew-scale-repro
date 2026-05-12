@@ -1,0 +1,41 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Two-loop closure inputs of the HBR identity. The T-parity argument that fixes theta_em = pi at the saddle level (Section: T-parity assignment of the defect field) plus the dilute-instanton-gas robustness bound on |Delta cos(theta_em)| are bundled here as the structural T-parity source axiom of the construction. Together with the four independent g-path determinations (data/g_path_*.json) and the bundled bounce-action eta_S, the data here close v_EW^canonical = 246.2186 GeV at residual Delta v / v = -5.86e-6 against PDG.",
+  "stand": "2026-04-26",
+  "T_parity_source_axiom": {
+    "statement": "The defect field carries T-eigenparity eta_T(Xi) = -1 at the saddle of the bounce action, so the unique negative mode is T-odd.",
+    "consequence_at_saddle": "cos(theta_em) = eta_T(Xi) = -1, i.e. theta_em = pi.",
+    "structural_layers": [
+      "Source axiom on the defect field's T-eigenparity at the bounce saddle.",
+      "Coleman saddle theorem fixing the unique negative-mode T-parity sign.",
+      "Defect-FT identification linking Xi to the bounce-saddle field whose T-eigenparity is the source axiom."
+    ]
+  },
+  "theta_em_radians": 3.141592653589793,
+  "theta_em_residual_vs_pi": 0.0,
+  "two_loop_closure_residual_pct": 0.4486,
+  "tree_plus_one_loop_v_EW_GeV": 245.116398,
+  "two_loop_canonical_v_EW_GeV": 246.218558,
+  "Delta_v_over_v_canonical": -5.86e-06,
+  "PDG_v_EW_GeV": 246.22,
+  "PDG_uncertainty_GeV": 0.07,
+  "dilute_instanton_gas_robustness": {
+    "bound_form": "|Delta cos(theta_em)| <= 10 * exp(-S_bounce)",
+    "S_bounce": 37.995389,
+    "exp_neg_S_bounce": 3.176e-17,
+    "bound_value": 3.176e-16,
+    "interpretation": "Non-perturbative dilute-instanton-gas corrections to cos(theta_em) are suppressed by exp(-S_bounce); the bound is 14 orders of magnitude below the closed two-loop residual 0.45%, so the saddle-fixed cos(theta_em) = -1 statement is robust to instanton-gas corrections at the tree-plus-one-loop precision of this paper."
+  },
+  "CPT_robustness_bound": {
+    "bound_form": "|Delta theta_em| <= experimental electroweak-CPT bound",
+    "bound_value_GeV2": 2e-12,
+    "source": "Standard CPT-violation bounds from electroweak precision tests; consistent with theta_em = pi at the experimentally accessible scale."
+  },
+  "framing": "The T-parity source axiom is the only physical input (beyond the five carrier coefficients and the bounce action S_bounce) that the HBR closure depends on; falsifying it (alternative T-parity assignment of Xi) would flip the sign of the two-loop closure and is the operational F2 falsification path of Section: Falsification."
+}

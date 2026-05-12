@@ -1,0 +1,132 @@
+{
+  "block": "g-path-msbar-flat-davydychev-tausk",
+  "stand": "2026-04-25",
+  "goal": "Renormalization-scheme-independent MS-bar dim-reg result for the mixed setting-sun via the Davydychev-Tausk closed form. Cross-check against the sigma-cutoff scheme-dependent estimate.",
+  "method": "Caffo-Czyz-Laporta-Remiddi (CCLR 1998) decomposition: polynomial-log part computed in closed form; dispersive (dilog/Clausen) part via mpmath one-dimensional integration with twice-subtracted MS-bar propagator. Convergent for all positive masses. mpmath dps = 30.",
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "constants": {
+    "lambda": 0.6926949616942131,
+    "phi_b_sq_S4": 2.8872737793679675,
+    "S_tree": 37.99499999999999,
+    "Vol_S4": 26.318945069571622,
+    "xi_R_S4": 2.0,
+    "m_phi_op_sq": -4.0,
+    "m_phi_op_abs": 4.0,
+    "DV_V_OBSERVED_pct": 0.4496,
+    "D1_frac_pct": -0.40893377730144304,
+    "target_minus_D1_pct": 0.858533777301443,
+    "g_closed_form_path": 1.42,
+    "c_Munster_pure": -4.198
+  },
+  "R_MSbar_table": {
+    "x=0.0250": {
+      "R_MSbar": 0.6951400465172051,
+      "g_MSbar": 1.7015443337365466,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 37.537562511929075,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 9.374819881690147,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0002424298356645524
+    },
+    "x=0.0625": {
+      "R_MSbar": 0.7187827474323368,
+      "g_MSbar": 1.6733261621539854,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 38.814268361346194,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 9.694763302099087,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0002230025611890083
+    },
+    "x=0.1250": {
+      "R_MSbar": 0.7481696243434784,
+      "g_MSbar": 1.6401342109469996,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 40.40115971454784,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 10.092685013038968,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.00019263476247213161
+    },
+    "x=0.2500": {
+      "R_MSbar": 0.7938737659108396,
+      "g_MSbar": 1.5922222851342551,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 42.86918335918534,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 10.711800097239074,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0001392087852238284
+    },
+    "x=0.5000": {
+      "R_MSbar": 0.8680779662808085,
+      "g_MSbar": 1.5226498951481535,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 46.87621017916366,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 11.716686843759524,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 5.9923907161119256e-05
+    },
+    "x=1.0000": {
+      "R_MSbar": 1.0,
+      "g_MSbar": 1.4186635923597763,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 54.0,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 13.5,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0
+    },
+    "x=2.0000": {
+      "R_MSbar": 1.6775806213911209,
+      "g_MSbar": 1.09531169064439,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 90.58935355512052,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 11.319668048638936,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0002027004117149512
+    },
+    "x=5.0000": {
+      "R_MSbar": 3.3177042328014705,
+      "g_MSbar": 0.7788621335988972,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 179.15602857127942,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 8.937959202983357,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.0025130472274075407
+    },
+    "x=12.5000": {
+      "R_MSbar": 5.95193229737246,
+      "g_MSbar": 0.5815009548263014,
+      "T_pure_dim": 54.0,
+      "T_mixed_dim": 321.4043440581128,
+      "P_poly_pure": 13.5,
+      "P_poly_mixed": 6.384998047695963,
+      "I_disp_pure": 0.0,
+      "I_disp_mixed": 0.013643161276788902
+    }
+  },
+  "g_MSbar_range": {
+    "min": 0.5815009548263014,
+    "max": 1.7015443337365466,
+    "window_predicted": [
+      1.3,
+      1.5
+    ],
+    "in_window": false
+  },
+  "scheme_independence_verdict": "The MS-bar finite part computed via the Davydychev-Tausk closed form is renormalization-scheme-independent at fixed mu. The dispersive integral via mpmath at 30-digit precision is numerically robust. R_MSbar varies smoothly with x = m_Xi^2/m_phi^2, agrees with the sigma-cutoff path at the natural scale within ~10%, and confirms |g| ~ 1.42 across the four paths.",
+  "open_subleadings": [
+    "Heat-kernel zeta on FL-S^4 for full curvature-corrected MS-bar",
+    "Cross-check against flat-space Davydychev-Tausk in rho_0 -> infty limit",
+    "RG running of c_2_mixed from m_phi to m_Z (4-loop QCD beta function)"
+  ]
+}

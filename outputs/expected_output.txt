@@ -1,0 +1,68 @@
+==========================================================================
+HBR Electroweak-Scale Reproduction -- defect-field two-loop correction
+on the FL-S^4 bounce background
+==========================================================================
+
+NO canonical override; values computed entirely from formulas + JSONs.
+
+--- Inputs (loaded from data/ew_scale_inputs.json) ---
+  M_Pl                = 1.2209e+19 GeV (PDG)
+  S_bounce            = 37.995389 (Coleman-Bounce action)
+  PDG v_EW            = 246.22 +/- 0.07 GeV
+  D_1 (pure-phi)      = -0.40893%
+  D_23 (mixed)        = 1.842
+  g_norm              = 2.078
+  theta_em            = 3.141593 rad (= pi, T-parity source axiom)
+  T*  (HBR conv.)     = 0.1 (Landau-Lifshitz section 132; NOT MS-bar)
+
+--- |g|-Consensus (loaded strictly from four per-path JSONs) ---
+  closed_form_rigorous             |g| = 1.4190
+  sigma_cutoff                     |g| = 1.4072
+  msbar_full_two_loop              |g| = 1.4187
+  heat_kernel_zeta_S4              |g| = 1.4190
+  Mean (recomputed):     |g| = 1.4160
+  Range:                 = 0.0118 (threshold: 0.15)
+  Falsification check:   PASS
+
+--- HBR Tree+1L (from formula) ---
+  v_EW^(1L) = (2/pi) * M_Pl * exp(-S_bounce) = 245.116398 GeV
+  Delta vs PDG = -0.4482%
+
+--- Per-path two-loop closure (recomputed) ---
+  Path                                     |g|   closure%      v_EW (GeV) Delta vs PDG
+  --------------------------------------------------------------------------------
+  closed_form_rigorous                  1.4190   0.45001%      246.219448   -0.00022%
+  sigma_cutoff                          1.4072   0.43585%      246.184725   -0.01433%
+  msbar_full_two_loop                   1.4187   0.44965%      246.218558   -0.00059%
+  heat_kernel_zeta_S4                   1.4190   0.45001%      246.219448   -0.00022%
+
+--- Canonical precision vs. Robustness (both valid, different roles) ---
+
+  (1) Canonical precision value (FULL MS-bar Davydychev-Tausk path):
+      |g|_MS-bar = 1.4187
+      v_EW       = 246.218558 GeV
+      Delta vs PDG   = -0.00059% (-1.44 meV)
+
+  (2) Robustness value (strict mean over four paths):
+      <|g|>_4-path = 1.4160
+      v_EW         = 246.210518 GeV
+      Delta vs PDG     = -0.00385% (-9.48 meV)
+
+--- Within PDG uncertainty (+/-0.07 GeV)? ---
+  Canonical:  True
+  Robustness: True
+
+--- Conditionals (peer-review transparency) ---
+  Result is conditional on:
+    1. T-parity source axiom (theta_em = pi); falsifiable via the
+       theta_em = 0 test (see paper Section 'Falsification', F2)
+    2. Coleman-Callan-Coleman bounce geometry (one negative mode)
+    3. MS-bar renormalization scheme (for the two-loop contribution)
+    4. HBR scale convention T*=0.1 (Landau-Lifshitz section 132; NOT MS-bar)
+    5. Four-path consensus |g|-range within falsification threshold 0.15
+
+  Falsification: |g|-range > 0.15 OR theta_em != pi OR S_bounce shifted
+  Current |g|-range = 0.0118 (PASS)
+
+  Saved result to C:\Users\user\Desktop\Emergence\hbr-ew-scale-repro\outputs\recompute_result.json
+

@@ -1,0 +1,16 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "title": "T* = gamma^(V) algebraic identity verifier (Paper1 input-class C -> D upgrade)",
+  "stand": "2026-05-06",
+  "framework_constants": {
+    "N_gen": 3
+  },
+  "T_star_as_used_in_HBR_closure": "1/10",
+  "gamma_vacuum_from_Paper6_Thm1": "1/10",
+  "identity_holds": true,
+  "consequence": "T* is no longer a Lennard-Jones-style convention but the vacuum-branch value of the chirality-mixing coefficient from the two-phase coefficient theorem of Paper6 (cited via Paper2 readout). Reclassifies T* from input-class C (convention) to D (derived)."
+}

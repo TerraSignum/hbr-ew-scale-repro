@@ -1,0 +1,61 @@
+name: reproduce-ew-scale
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  reproduce:
+    name: Reproduce EW scale on ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pytest (all tests including falsification + figure tests)
+        run: pytest -v
+
+      - name: Recompute EW scale (strict, no canonical override)
+        run: python ./src/recompute_ew_scale.py
+
+      - name: Regenerate figures (PDF + PNG)
+        run: python ./src/make_figures.py
+
+      - name: Verify SHA256 of data files
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          cd data
+          sha256sum -c SHA256SUMS
+
+      - name: Upload recompute result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: recompute-result-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: outputs/recompute_result.json
+          retention-days: 30
+
+      - name: Upload regenerated figures artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: figures-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: paper/figures/
+          retention-days: 30

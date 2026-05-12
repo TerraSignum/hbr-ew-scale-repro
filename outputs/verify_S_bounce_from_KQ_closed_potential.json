@@ -1,0 +1,80 @@
+{
+  "method": "verify_S_bounce_from_KQ_closed_potential",
+  "schema_version": "1.1.0",
+  "framing": "Calibration-independent cross-sector lock: the absolute K^2/Q -> S_b rescaling carries a calibration constant fixed by the EW chirality angle theta_*. The relative variation R(theta) = (K^2/Q)(theta) / (K^2/Q)(theta_*) is calibration-independent and predicts how the bounce action would shift under a chirality-angle excursion away from theta_*. The bundled S_b sits at R = 1 by EW calibration.",
+  "constants": {
+    "gamma": 0.1,
+    "eta_S_ref": 3.023577,
+    "S_b_ref_unit": 37.995389163052266,
+    "S_b_bundled": 37.995389,
+    "theta_star_radians": 0.7853981633974483,
+    "theta_star_label": "balanced_pi_4 (EW chirality angle)"
+  },
+  "K_coefficients": {
+    "K_pre": 1.33,
+    "K_post": 1.3343333333333331,
+    "a_K": -0.0025,
+    "b_K": 0.00625
+  },
+  "Q_coefficients": {
+    "Q_pre": 0.32,
+    "Q_post": 0.251875,
+    "a_Q": -0.02,
+    "b_Q": -0.01125
+  },
+  "by_angle": {
+    "PRE_endpoint": {
+      "theta_radians": 0.0,
+      "K": 1.33,
+      "Q": 0.32,
+      "K_sq_over_Q": 5.5278125000000005,
+      "R_relative": 0.8314714129228122,
+      "S_b_under_R_calibration": 31.59207977638188,
+      "shift_from_bundle_abs": -6.403309223618123,
+      "shift_from_bundle_rel": -0.1685285870771878
+    },
+    "balanced_pi_4": {
+      "theta_radians": 0.7853981633974483,
+      "K": 1.3296666666666668,
+      "Q": 0.26593750000000005,
+      "K_sq_over_Q": 6.648229168298733,
+      "R_relative": 1.0,
+      "S_b_under_R_calibration": 37.995389,
+      "shift_from_bundle_abs": 0.0,
+      "shift_from_bundle_rel": 0.0
+    },
+    "POST_endpoint": {
+      "theta_radians": 1.5707963267948966,
+      "K": 1.3343333333333331,
+      "Q": 0.251875,
+      "K_sq_over_Q": 7.068766032533772,
+      "R_relative": 1.0632554705304562,
+      "S_b_under_R_calibration": 40.398805209182726,
+      "shift_from_bundle_abs": 2.4034162091827227,
+      "shift_from_bundle_rel": 0.06325547053045627
+    },
+    "min_K_sq_over_Q": {
+      "theta_radians": 5.786836745895891e-06,
+      "K": 1.33000011573688,
+      "Q": 0.3199995081165953,
+      "K_sq_over_Q": 5.527821959075,
+      "R_relative": 0.8314728357189826,
+      "S_b_under_R_calibration": 31.59213383607584
+    },
+    "max_K_sq_over_Q": {
+      "theta_radians": 1.5707905399581505,
+      "K": 1.3343331597280859,
+      "Q": 0.2518750289364651,
+      "K_sq_over_Q": 7.0687633810616886,
+      "R_relative": 1.0632550717066467,
+      "S_b_under_R_calibration": 40.39879005571694
+    }
+  },
+  "R_endpoint_window": {
+    "min": 0.8314714129228122,
+    "max": 1.0632554705304562,
+    "spread": 0.23178405760764398
+  },
+  "relative_envelope_pct_under_chirality_flip": 23.1784057607644,
+  "verdict": "S_b relative-variation prediction R(theta) sits in [0.8315, 1.0633] across the chirality flip (spread 23.2%). The bundled S_b = 37.99539 is the EW-calibrated reference at theta_* = pi/4 by construction; the pre-flip and post-flip endpoints predict S_b shifts of -16.85% and +6.33% respectively. Cross-sector lock: registered as a structural relative-variation prediction; the absolute calibration constant K^2/Q -> S_b is fixed by the bounce-sector eta_S audit, not by the source-tensor K, Q themselves."
+}

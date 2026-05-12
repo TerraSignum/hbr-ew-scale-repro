@@ -1,0 +1,26 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "title": "T-parity theta_em = pi from chirality-pairing on the symmetric Xi-graph",
+  "stand": "2026-05-06",
+  "premises": {
+    "(a)": "Symmetric Xi-graph Xi_{ij} = Xi_{ji} (framework-foundational)",
+    "(b)": "Hermitian Wilson-Dirac H = gamma_5 D_W commutes with gamma_5",
+    "(c)": "Paper4A APS-decomposition: chirality-pair structure -> eta_partial = 0",
+    "(d)": "Paper4D Kogut-Susskind: ind(D_KS)/N_taste = Phi exact on 16 nontrivial-flux configurations -> chirality conserved at the index level (anomaly-free)"
+  },
+  "synthetic_witness": {
+    "n_chiral": 32,
+    "n_eigvals": 64,
+    "max_chirality_pair_residual": 0.0,
+    "eta_invariant_sgn_sum": 0.0,
+    "chirality_pairing_holds": true,
+    "eta_partial_zero": true
+  },
+  "consequence_theta_em_eq_pi": true,
+  "input_class_change": "theta_em = pi: C (axiom) -> D (derived from (a)+(b)+(c)+(d))",
+  "load_bearing_axiom_remaining": "symmetric Xi-graph (shared by all 9 companion papers)"
+}

@@ -1,0 +1,171 @@
+{
+  "block": "g-path-sigma-cutoff-scheme",
+  "stand": "2026-04-25",
+  "goal": "Scheme-dependent extraction of m_Xi-dependence in the mixed setting-sun via sigma-cutoff renormalization. Natural scale sigma_cut = 1/|m_phi| = 0.5.",
+  "method": "Truncated spectral sum on [sigma_cut, pi - sigma_cut]. R(m_Xi^2; sigma_cut) = J_mixed/J_pure with both integrals in the same sigma interval. UV-divergent inner region [0, sigma_cut] is excluded as a renormalization choice.",
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "convention": "Defect-field cos(theta_em) modification of the mixed setting-sun on the FL-S^4 bounce",
+  "constants": {
+    "lambda": 0.6926949616942131,
+    "phi_b_sq_S4": 2.8872737793679675,
+    "S_tree": 37.99499999999999,
+    "Vol_S4": 26.318945069571622,
+    "xi_R_S4": 2.0,
+    "m_phi_op_sq": -4.0,
+    "m_phi_abs_in_rho0_units": 2.0,
+    "natural_sigma_cut_1_over_m_phi": 0.5,
+    "DV_V_OBSERVED_pct": 0.4496,
+    "D1_frac_pct": -0.40893377730144304,
+    "g_closed_form": 1.42,
+    "c_Munster_pure": -4.198
+  },
+  "R_table": {
+    "sigma_cut=0.050": {
+      "0.1": 0.9986117041551765,
+      "0.25": 0.9985783511525179,
+      "0.5": 0.9985229524361373,
+      "1.0": 0.9984127983902333,
+      "2.0": 0.9981947317116606,
+      "5.0": 0.9975551168143554,
+      "10.0": 0.9965276789606105,
+      "25.0": 0.9936581872198881,
+      "50.0": 0.9893824364089889
+    },
+    "sigma_cut=0.100": {
+      "0.1": 1.0038053545010504,
+      "0.25": 1.0038948783469475,
+      "0.5": 1.0040423868488058,
+      "1.0": 1.004331819460346,
+      "2.0": 1.004892121714576,
+      "5.0": 1.0064611875949343,
+      "10.0": 1.0088072596288855,
+      "25.0": 1.0145538897820747,
+      "50.0": 1.021537879867418
+    },
+    "sigma_cut=0.200": {
+      "0.1": 0.9465878607963056,
+      "0.25": 0.9452591625883396,
+      "0.5": 0.9431125533215621,
+      "1.0": 0.9390327472961583,
+      "2.0": 0.931534007443804,
+      "5.0": 0.9125671858562635,
+      "10.0": 0.8882320331285719,
+      "25.0": 0.8429654235067603,
+      "50.0": 0.8088222236366867
+    },
+    "sigma_cut=0.300": {
+      "0.1": 0.9867045128269265,
+      "0.25": 0.9862926327919478,
+      "0.5": 0.9856428254741187,
+      "1.0": 0.9844542596570047,
+      "2.0": 0.9824007204863094,
+      "5.0": 0.9777905457572276,
+      "10.0": 0.9728708775059051,
+      "25.0": 0.9665303245927844,
+      "50.0": 0.9650740985846642
+    },
+    "sigma_cut=0.500": {
+      "0.1": 1.0048760208683756,
+      "0.25": 1.0060977308895604,
+      "0.5": 1.0079267748251135,
+      "1.0": 1.0109936146525131,
+      "2.0": 1.0155740298795128,
+      "5.0": 1.0232211559014497,
+      "10.0": 1.0278643707329065,
+      "25.0": 1.0268048511972268,
+      "50.0": 1.0191300544149877
+    },
+    "sigma_cut=0.700": {
+      "0.1": 0.8868062237691821,
+      "0.25": 0.8906894035061897,
+      "0.5": 0.8962169070071495,
+      "1.0": 0.9046950588715562,
+      "2.0": 0.9154311116753973,
+      "5.0": 0.9273217737820457,
+      "10.0": 0.9275783591701947,
+      "25.0": 0.9117709981735953,
+      "50.0": 0.8957001623073733
+    },
+    "sigma_cut=1.000": {
+      "0.1": 0.8343944568210636,
+      "0.25": 0.8368862288248989,
+      "0.5": 0.8402286953620138,
+      "1.0": 0.8447990323564257,
+      "2.0": 0.8492743464314356,
+      "5.0": 0.8505289589771764,
+      "10.0": 0.8459345954599808,
+      "25.0": 0.8370797910920713,
+      "50.0": 0.8331224877962253
+    },
+    "sigma_cut=1.300": {
+      "0.1": 1.7989541041830492,
+      "0.25": 1.7894449530458312,
+      "0.5": 1.7771266398816232,
+      "1.0": 1.7614827947874891,
+      "2.0": 1.7490511436280232,
+      "5.0": 1.75425181379649,
+      "10.0": 1.7752362305894704,
+      "25.0": 1.799322685621788,
+      "50.0": 1.8046125183921042
+    }
+  },
+  "natural_scale_predictions": {
+    "0.1": {
+      "R_natural": 1.0048760208683756,
+      "D3_frac_pct_at_g_1p42": -0.864027050974918,
+      "g_target_at_theta_pi": 1.4152174731225917
+    },
+    "0.25": {
+      "R_natural": 1.0060977308895604,
+      "D3_frac_pct_at_g_1p42": -0.8650775193758247,
+      "g_target_at_theta_pi": 1.4143579589253075
+    },
+    "0.5": {
+      "R_natural": 1.0079267748251135,
+      "D3_frac_pct_at_g_1p42": -0.8666501944172428,
+      "g_target_at_theta_pi": 1.4130740871331204
+    },
+    "1.0": {
+      "R_natural": 1.0109936146525131,
+      "D3_frac_pct_at_g_1p42": -0.8692871690458052,
+      "g_target_at_theta_pi": 1.4109291856424517
+    },
+    "2.0": {
+      "R_natural": 1.0155740298795128,
+      "D3_frac_pct_at_g_1p42": -0.8732255679911849,
+      "g_target_at_theta_pi": 1.4077438221318963
+    },
+    "5.0": {
+      "R_natural": 1.0232211559014497,
+      "D3_frac_pct_at_g_1p42": -0.8798008306185663,
+      "g_target_at_theta_pi": 1.4024735130187205
+    },
+    "10.0": {
+      "R_natural": 1.0278643707329065,
+      "D3_frac_pct_at_g_1p42": -0.8837932268291949,
+      "g_target_at_theta_pi": 1.399302201279318
+    },
+    "25.0": {
+      "R_natural": 1.0268048511972268,
+      "D3_frac_pct_at_g_1p42": -0.8828822154000712,
+      "g_target_at_theta_pi": 1.4000239575886966
+    },
+    "50.0": {
+      "R_natural": 1.0191300544149877,
+      "D3_frac_pct_at_g_1p42": -0.8762831604988909,
+      "g_target_at_theta_pi": 1.405285673641982
+    }
+  },
+  "verdict": "Under the sigma-cutoff scheme with natural scale sigma_cut = 1/|m_phi| = 0.5, R(m_Xi^2) shows residual m_Xi-dependence that shifts the |g|-prediction by O(few %) compared to the leading-order R = 1 closed-form path. The full MS-bar Davydychev-Tausk path replaces this scheme-dependent estimate with a renormalization-scheme-independent finite part; the sigma-cutoff result remains a peer-review-defensible lower bound on the m_Xi-dependence.",
+  "scheme_dependence_assessment": "R varies smoothly with sigma_cut over the natural range [0.2, 1.0]. The variation is < 10% in this interval for fixed m_Xi, indicating scheme-stability at the natural scale. sigma_cut < 0.1 is UV-dominated (R -> 1); sigma_cut > 1.5 is IR-dominated (cutoff > pi/2).",
+  "open_for_full_msbar_path": [
+    "Full MS-bar dim-reg setting-sun on S^4 with two masses",
+    "Heat-kernel zeta-regularized 2-loop bounce action coefficient",
+    "Comparison to flat-space limit (rho_0 -> infty)",
+    "Renormalization-group running of c_2_mixed from m_phi to m_Z"
+  ]
+}

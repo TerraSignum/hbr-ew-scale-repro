@@ -1,0 +1,37 @@
+{
+  "step": "Prong-I-S_bounce-landing-scan",
+  "stand": "2026-04-28",
+  "method": "Brute scan over S_bounce at fixed |g|=1.4187 (bundled msbar Davydychev-Tausk value) and theta_em=pi, asking whether the closure v_EW = (2/pi)*M_Pl*exp(-S_bounce)*(1+delta_2L) lands inside the MuLan-anchored band [246.15, 246.29] GeV.",
+  "branch_metadata": {
+    "causal_wave_branch": "vacuum",
+    "branch_rationale": "Vacuum-QFT/electroweak repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "bundled_inputs": {
+    "M_Pl_GeV": 1.2209e+19,
+    "S_bounce_bundled": 37.995389,
+    "g_bundled": 1.4187,
+    "theta_em_radians": 3.141592653589793,
+    "delta_2L_pct_canonical": 0.44964784354820364
+  },
+  "MuLan_band": {
+    "lower_GeV": 246.15,
+    "upper_GeV": 246.29
+  },
+  "v_EW_at_bundled_S_bounce": 246.21859840866728,
+  "landing_window": {
+    "landing_found": true,
+    "S_bounce_lower": 37.995189,
+    "S_bounce_upper": 37.995589,
+    "S_bounce_window_width": 0.00039999999999906777,
+    "S_bounce_bundled": 37.995389,
+    "S_bounce_bundled_in_window": true
+  },
+  "scan_resolution": {
+    "step_size": 9.999999999999431e-05,
+    "n_steps": 1001,
+    "scan_range_lower": 37.945389000000006,
+    "scan_range_upper": 38.045389
+  },
+  "verdict": "Strongest anti-back-fit argument: the four-decimal-digit match between bundled S_bounce = 37.995389 (from the saddle integral, independent of v_EW) and the value that lands v_EW inside the MuLan band is a coincidence at the 1e-4 level if S_bounce had been silently back-fit to v_EW. Prong I of the combined anti-back-fit argument."
+}
