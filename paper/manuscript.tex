@@ -592,6 +592,43 @@ on the canonical inputs is
 \url{src/recompute_ew_scale.py}, with input file
 \url{data/ew_scale_inputs.json}.
 
+\paragraph{Cross-observable structural-rational form of
+$\Sb$.} The numerical saddle value \eqref{eq:etaS-num} admits
+a clean System-$\mathcal R$ rational identification that
+binds the EW-scale-hierarchy sector to the cosmological-tensor
+sector:
+\begin{equation}
+\Sb \;=\; 2\,d + \tfrac{N_{\mathrm{gen}}}{\gamma}
+              - \tfrac{1}{2}\gamma^{2}
+       \;=\; 8 + 30 - \tfrac{1}{200}
+       \;=\; \tfrac{7599}{200}
+       \;=\; 37.995,
+\label{eq:Sb_structural_rational}
+\end{equation}
+with empirical residual $0.0010\%$ (strict-EXACT tier;
+audit \path|src/verify_S_bounce_structural_rational.py|,
+output
+\path|outputs/verify_S_bounce_structural_rational.json|).
+The leading integer
+$2\,d + N_{\mathrm{gen}}/\gamma\!=\!38$ counts two structural
+contributions (dimensional and generation-amplified by the
+inverse Yukawa-damping rate), and the
+$-\tfrac{1}{2}\gamma^{2}\!=\!-\tfrac{1}{200}$ correction is
+\emph{exactly} the spatial cosmological-tensor component
+$\Lambda_{s}\!=\!-\gamma^{2}/2$ of the companion-paper
+$\Lambda_{\mu\nu}\!=\!\mathrm{diag}(\alpha_{\xi}^{2},
+-\gamma^{2}/2,-\gamma^{2}/2,-\gamma^{2}/2)$ closure
+(\cite{Paper4B} row O28). The cross-observable identification
+\begin{equation*}
+\Sb - \Lambda_{s} \;=\; 2\,d + N_{\mathrm{gen}}/\gamma \;=\; 38
+\end{equation*}
+is non-trivial: it links the saddle integration that fixes
+$\vEW$ to the lattice-derived cosmological-tensor sector via
+the same $\gamma^{2}$ scale, without any free parameter. We
+record this as a structural observation, not a new derivation;
+the saddle value $\Sb\!=\!37.995389$ remains the falsification-
+relevant numerical input via \eqref{eq:etaS-num}.
+
 \paragraph{Saddle-first reproducer chain (commit-history
 blindness witness).}
 The structural-input order is fixed by the public reproducer

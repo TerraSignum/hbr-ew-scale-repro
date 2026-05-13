@@ -1,0 +1,53 @@
+{
+  "headline": "S_bounce structural-rational closure: best candidate is S_bounce = 38 - gamma^2/2 = 7599/200, with empirical residual 0.0010% (tier EXACT). The gamma^2/2 = 1/200 correction is exactly the spatial cosmological-tensor component Lambda_s (P3 O28), giving the cross-observable identification S_bounce - Lambda_s = 2(d + 5 N_gen) = 38.",
+  "empirical": {
+    "S_bounce": 37.995389,
+    "eta_S": 3.023577,
+    "eta_S_uncertainty": 5e-06,
+    "source": "P1 verify_eta_S_high_precision audit (4 pi eta_S = S_bounce)"
+  },
+  "structural_closure": {
+    "form": "S_bounce = 2(d + 5 N_gen) - gamma^2/2",
+    "rational": "7599/200",
+    "value": 37.995,
+    "delta_pct": -0.0010238084416125436,
+    "tier": "EXACT",
+    "integer_part": 38,
+    "integer_decomposition": "2*d + N_gen/gamma = 2*4 + 3/0.1 = 8 + 30 = 38",
+    "correction": "- gamma^2/2 = -1/200 = +Lambda_s (P3 O28)",
+    "cross_observable_link": "S_bounce + Lambda_s = 38 (integer)",
+    "eta_S_form": "eta_S = (38 - gamma^2/2) / (4 pi)",
+    "eta_S_value": 3.0235460313882814,
+    "eta_S_delta_pct": -0.0010242375741905956
+  },
+  "competitors": [
+    {
+      "candidate": "integer 38",
+      "value": 38.0,
+      "rational": "38/1",
+      "delta_pct": 0.012135683095643616,
+      "note": "leading integer only"
+    },
+    {
+      "candidate": "38 - gamma^2/2 (= 38 + Lambda_s)",
+      "value": 37.995,
+      "rational": "7599/200",
+      "delta_pct": -0.0010238084416125436,
+      "note": "with leading System-R gamma^2 correction; identical to integer + Lambda_s spatial cosmological tensor"
+    },
+    {
+      "candidate": "4 pi N_gen + 3 gamma",
+      "value": 37.999111843077515,
+      "rational": null,
+      "delta_pct": 0.00979814439460426,
+      "note": "Coleman saddle expansion to leading gamma (transcendental)"
+    },
+    {
+      "candidate": "4 pi (N_gen + alpha_xi gamma / 4)",
+      "value": 37.9818551819006,
+      "rational": null,
+      "delta_pct": -0.03561963294915605,
+      "note": "eta_S = N_gen + alpha_xi gamma / 4 ansatz (transcendental)"
+    }
+  ]
+}
