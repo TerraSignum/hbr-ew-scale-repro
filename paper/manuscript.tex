@@ -89,7 +89,10 @@ $T^{*}\!=\!\tfrac{1}{10}$ coincides exactly with the
 vacuum-branch chirality coefficient
 $\gamma^{(V)}\!=\!1/(N_{\rm gen}^{2}\!+\!1)\!=\!1/10$ of the
 two-phase coefficient theorem~\cite{Paper6} ($N_{\rm gen}\!=\!3$
-by the integer-uniqueness theorem of~\cite{Paper2}); $T^{*}$ is
+is an observational input of the framework --- the
+discrete-geometric generation count, fixed empirically
+alongside the spatial dimension $d\!=\!4$; it is not derived
+from a uniqueness theorem); $T^{*}$ is
 therefore not a Lennard-Jones-style low-energy convention~\cite{LandauLifshitz} but
 the vacuum-branch reading of the chirality-mixing
 coefficient. This identification is independently anchored
@@ -335,7 +338,7 @@ Quantity & Class & Source / derivation & Used in \\
 $M_{\rm Pl}$         & \textbf{E} & CODATA-2018 / PDG aggregate (\cite{CODATA2018,PDG}) & Planck-scale anchor \\
 $\vEW$ (target)      & \textbf{E} & MuLan $G_{F}$ measurement (\cite{MuLan2013}) & benchmark only \\
 $M_{Z}, \sin^{2}\theta_{W}$ & \textbf{E} & PDG aggregate & one-loop matching \\
-$T^{*}\!=\!1/10$     & \textbf{D} & two-phase coefficient theorem (\cite{Paper6} Thm.~1, \cite{Paper2} readout): $T^{*}\!=\!\gamma^{(V)}\!=\!1/(N_{\rm gen}^{2}\!+\!1)\!=\!1/10$, $N_{\rm gen}\!=\!3$ by integer-uniqueness (\cite{Paper2}) & dimensionless HBR scale (Sec.~\ref{sec:bounce-action}) \\
+$T^{*}\!=\!1/10$     & \textbf{D} & two-phase coefficient theorem (\cite{Paper6} Thm.~1, \cite{Paper2} readout): $T^{*}\!=\!\gamma^{(V)}\!=\!1/(N_{\rm gen}^{2}\!+\!1)\!=\!1/10$, with $N_{\rm gen}\!=\!3$ an observational input (not derived) & dimensionless HBR scale (Sec.~\ref{sec:bounce-action}) \\
 $\msbar$ matching    & \textbf{C} & canonical reporting choice among three regularization-distinct paths (sigma-cutoff, $\msbar$ Davydychev--Tausk, $S^{4}$ heat-kernel/zeta) to the same $|g|\!=\!1.4187$, equivalent to the symmetric-bounded-operator readout of \cite{Paper2} & two-loop coupling assembly \\
 $\theta_{\rm em}\!=\!\pi$ & \textbf{D} & chirality-pairing on the symmetric $\Xi$-graph: Hermitian Wilson-Dirac $H\!=\!\gamma_{5}D_{W}$ commutes with $\gamma_{5}$ giving spectrum $(+\lambda,-\lambda)$ paired and $\eta_{\partial}\!\equiv\!0$ (\cite{Paper4A}); chirality conserved at non-trivial-flux index by $\mathrm{ind}(D_{\rm KS})/N_{\rm taste}\!=\!\Phi$ exact across $16$ configurations (\cite{Paper4D}) & sign of two-loop residue \\
 $\eta_{S}$           & \textbf{D} & solved from EOM \eqref{eq:etaS-int} & bounce action \\
@@ -369,8 +372,26 @@ bounce on a four-sphere background;
 its numerical value here is the input that we treat as fixed at the
 value listed.
 The two-loop coefficients $D_{1}$, $D_{23}$, and $g_{\mathrm{norm}}$
-are diagram coefficients computed independently in the four
-calculation paths described in Section~\ref{sec:fourpath}.
+are diagram coefficients with definite physical content --- $D_{1}$
+the pure-$\phi$ figure-8 integral, $D_{23}\!=\!D_{2}\!+\!D_{3}$ the
+mixed figure-8-tadpole and setting-sun-exchange integrals,
+$g_{\mathrm{norm}}$ the two-loop normalisation --- on the
+$S^{4}$ Camporesi--Higuchi background. \emph{Provenance note:}
+their specific numerical values
+($D_{1}\!=\!-0.40893\%$, $D_{23}\!=\!1.842$,
+$g_{\mathrm{norm}}\!=\!2.078$) enter this paper as
+\emph{stated diagram-coefficient inputs} --- the explicit
+two-loop integral evaluations producing them are an external
+input to this reproducibility package, not re-derived within it.
+What Section~\ref{sec:fourpath} computes is the coupling $|g|$
+\emph{given} these coefficients (three independent evaluation
+methods plus one explicitly-circular self-consistency check that
+is excluded from the consensus); the four paths do not
+independently re-derive $D_{1}$, $D_{23}$, $g_{\mathrm{norm}}$.
+The closure is therefore honestly read as: tree-plus-one-loop
+$\vEW^{(1\mathrm{L})}$ is rigorously derived here; the two-loop
+\emph{correction} is assembled from stated diagram coefficients
+and a separately-computed $|g|$.
 
 \begin{figure}[h]
 \centering
@@ -1938,9 +1959,11 @@ information from the bounce-action sector of the present paper.
 vacuum-branch chirality coefficient
 $\gamma^{(V)}\!=\!1/(N_{\rm gen}^{2}\!+\!1)\!=\!1/10$ is the
 unique algebraic fixed point of the chirality-mixing identity
-of the companion two-phase paper~\cite{Paper6}, with
-$N_{\rm gen}\!=\!3$ fixed by the integer-uniqueness theorem
-of~\cite{Paper2}.
+of the companion two-phase paper~\cite{Paper6}, evaluated at
+the framework's observational input $N_{\rm gen}\!=\!3$ (the
+discrete-geometric generation count, fixed empirically
+alongside $d\!=\!4$; it is consumed as an integer input, not
+derived from a uniqueness theorem).
 \item[(C2)] \emph{Five-coefficient bounded-operator readout.}
 The five System-$\mathcal{R}$ coefficients
 $(\alpha_{\xi},\beta_{\pi},\gamma,\varepsilon^{2}_{\rm sync},D_{\Omega})
