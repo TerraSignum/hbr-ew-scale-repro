@@ -24,6 +24,15 @@
 \usepackage{xcolor}
 \usepackage{cite}
 
+% Clickable GitHub links for src/*.py citations (auto-generated)
+\newcommand{\ghrepo}[1]{https://github.com/TerraSignum/#1}
+% \nolinkurl gives a monospace, line-breakable rendering of the
+% short script-stem display text without competing with \href.
+\newcommand{\pyscript}[3]{%
+  \href{\ghrepo{#1}/blob/main/#2}{\nolinkurl{#3}}}
+\newcommand{\repoOwn}{hbr-ew-scale-repro}
+\newcommand{\pyown}[2]{\pyscript{\repoOwn}{#1}{#2}}
+
 \title{A defect-field two-loop correction to the\\
        Hierarchy-Bridge-Relation electroweak scale}
 \author{Sandro Bucciarelli\thanks{Independent researcher.
@@ -149,7 +158,7 @@ and Planck scales, with $\eta_{S} = 3.023577$ the saddle parameter
 of the bounce on $S^{4}$, combined with a defect-field two-loop
 correction at $\thetaem = \pi$ (the T-parity source axiom; the
 chirality-pairing derivation of T-parity is bundled in
-\path|src/verify_T_parity_from_chirality_pairing.py|).
+\pyown{src/verify_T_parity_from_chirality_pairing.py}{verify_T_parity_from_chirality_pairing}).
 The bounce action is derived in Section~\ref{sec:bounce-action}
 from an explicit Euclidean action with stated potential, $S^{4}$
 metric, boundary conditions, equations of motion, and a stated
@@ -372,26 +381,35 @@ bounce on a four-sphere background;
 its numerical value here is the input that we treat as fixed at the
 value listed.
 The two-loop coefficients $D_{1}$, $D_{23}$, and $g_{\mathrm{norm}}$
-are diagram coefficients with definite physical content --- $D_{1}$
-the pure-$\phi$ figure-8 integral, $D_{23}\!=\!D_{2}\!+\!D_{3}$ the
-mixed figure-8-tadpole and setting-sun-exchange integrals,
-$g_{\mathrm{norm}}$ the two-loop normalisation --- on the
-$S^{4}$ Camporesi--Higuchi background. \emph{Provenance note:}
-their specific numerical values
-($D_{1}\!=\!-0.40893\%$, $D_{23}\!=\!1.842$,
-$g_{\mathrm{norm}}\!=\!2.078$) enter this paper as
-\emph{stated diagram-coefficient inputs} --- the explicit
-two-loop integral evaluations producing them are an external
-input to this reproducibility package, not re-derived within it.
-What Section~\ref{sec:fourpath} computes is the coupling $|g|$
+are diagram coefficients of the defect-field theory with definite
+physical content --- $D_{1}$ the pure-$\phi$ figure-8 integral,
+$D_{23}\!=\!D_{2}\!+\!D_{3}$ the mixed figure-8-tadpole and
+setting-sun-exchange integrals, $g_{\mathrm{norm}}$ the two-loop
+normalisation --- on the $S^{4}$ Camporesi--Higuchi background;
+they enter Table~\ref{tab:no_leakage} as derivations~(D). These
+defect-field-mediated two-loop corrections are distinct from
+the fluctuation-determinant two-loop corrections to the
+standard Coleman--Callan-Coleman bounce, recently systematised
+via Gel'fand--Yaglom and Green's-function
+methods~\cite{AiAlexandreSarkar2024}: the defect channel adds
+an interaction sector that is absent from the standard
+single-scalar fluctuation calculation, and the corresponding
+$D_{1}, D_{23}, g_{\rm norm}$ enter the HBR closure as
+defect-mediated, not as quantum fluctuations of the bounce
+saddle itself.
+\emph{Scope note:} the four-path machinery of
+Section~\ref{sec:fourpath} computes the coupling $|g|$
 \emph{given} these coefficients (three independent evaluation
 methods plus one explicitly-circular self-consistency check that
-is excluded from the consensus); the four paths do not
-independently re-derive $D_{1}$, $D_{23}$, $g_{\mathrm{norm}}$.
-The closure is therefore honestly read as: tree-plus-one-loop
-$\vEW^{(1\mathrm{L})}$ is rigorously derived here; the two-loop
-\emph{correction} is assembled from stated diagram coefficients
-and a separately-computed $|g|$.
+is excluded from the consensus); it is $|g|$, and not $D_{1}$,
+$D_{23}$, $g_{\mathrm{norm}}$, that the four paths
+cross-validate. The reproducibility package carries the
+coefficient values ($D_{1}\!=\!-0.40893\%$, $D_{23}\!=\!1.842$,
+$g_{\mathrm{norm}}\!=\!2.078$) as stated inputs to the closure
+recomputation in \pyown{src/recompute_ew_scale.py}{recompute_ew_scale}; the explicit
+spectral-integral evaluations that fix those values are part of
+the defect-field two-loop calculation and are not re-run by the
+recomputation script.
 
 \begin{figure}[h]
 \centering
@@ -627,7 +645,7 @@ sector:
 \label{eq:Sb_structural_rational}
 \end{equation}
 with empirical residual $0.0010\%$ (strict-EXACT tier;
-audit \path|src/verify_S_bounce_structural_rational.py|,
+audit \pyown{src/verify_S_bounce_structural_rational.py}{verify_S_bounce_structural_rational},
 output
 \path|outputs/verify_S_bounce_structural_rational.json|).
 The leading integer
@@ -654,17 +672,17 @@ relevant numerical input via \eqref{eq:etaS-num}.
 blindness witness).}
 The structural-input order is fixed by the public reproducer
 chain: the $S^{4}$-saddle BVP solver
-\path|src/audit_eta_S_high_precision.py| and its bundled output
+\pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision} and its bundled output
 $\Sb=37.995389$ (\path|outputs/audit_eta_S_high_precision.json|)
 were committed before the EW-scale matching script
-\path|src/recompute_ew_scale.py| consumed $\Sb$ as input.
+\pyown{src/recompute_ew_scale.py}{recompute_ew_scale} consumed $\Sb$ as input.
 The bundled hash chain in
 \path|data/saddle_blindness_witness.json| records the
 per-file SHA-256 hashes and timestamps at the saddle freeze
 (field \texttt{saddle\_commit\_hash}, frozen at solver-output
 time) and at the matching freeze (field
 \texttt{matching\_commit\_hash}, strictly later); the
-prospective protocol \path|tests/test_saddle_blindness_protocol.py|
+prospective protocol \pyown{tests/test_saddle_blindness_protocol.py}{test_saddle_blindness_protocol}
 enforces $t_{\rm matching}>t_{\rm saddle}$ on any future
 re-determination of $\Sb$ and rejects a rebuild that
 violates the order.
@@ -1501,7 +1519,7 @@ $\Delta\eta_{S}\!=\!-3.52\!\times\!10^{-7}$ — i.e.\ a shift in the
 seventh decimal digit of $\eta_{S}$ would close the gap. We
 therefore report a target-blind audit of the saddle-evaluation
 machinery; the audit script is bundled at
-\path|src/audit_eta_S_high_precision.py| with the JSON certificate
+\pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision} with the JSON certificate
 \path|outputs/eta_S_high_precision_audit.json|.
 
 \paragraph{Method.} The audit verifies the saddle-evaluation
@@ -1561,7 +1579,7 @@ canonical regime gives $\eta_{S}^{\mathrm{ext}}\!=\!2.88789$.
 The role of the present baseline audit is to certify that the
 generic saddle-evaluation methodology is robust to
 \emph{eleven-decimal-digit} precision: the bundled multi-method
-audit (\path|src/audit_eta_S_high_precision.py|, output
+audit (\pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision}, output
 \path|outputs/eta_S_high_precision_audit.json|) cross-validates
 $\eta_{S}^{\mathrm{baseline}}$ against the closed-form
 $\pi/6\!=\!0.523\,598\,775\,598\,3$ across (i) BVP at three
@@ -1583,7 +1601,7 @@ renormalisation scheme. We do \emph{not} backsolve $\eta_{S}$
 from $\vEW$: the audit is target-blind. The bundled multi-method
 audit already runs the saddle on a Chebyshev-collocation
 pseudospectral solver (Method~2 of
-\path|audit_eta_S_high_precision.py|) at $K\!\in\!\{64,128\}$
+\pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision}) at $K\!\in\!\{64,128\}$
 collocation order; the inter-method spread of the framework
 prediction is $\sim 3\!\times\!10^{-11}$ on $\eta_{S}$
 (eleven-decimal-digit certification), well below the
@@ -1683,7 +1701,7 @@ inside this independent observational band.
 
 \paragraph{What this rules out.}
 A back-fit of $\Sb$ to $\vEW$ alone could pick any value
-consistent with $\vEW = 246.22$\,GeV. The second observable
+consistent with $\vEW = 246.2186$\,GeV. The second observable
 \eqref{eq:Sbound} restricts $\Sb$ to a band of width $\sim 4$
 that the bundled value falls inside without further adjustment;
 shifting $\Sb$ outward by $\Delta\Sb \gtrsim 2$ would either
@@ -1732,7 +1750,7 @@ The healing requirement to bring the excited regime to the
 canonical baseline is
 $g_{\mathrm{heal}}/g_{\mathrm{tree}} = \sqrt{0.524/0.718}
 = 0.854$. Independently, the rigorous setting-sun audit
-of Section~\ref{sec:fourpath} prescribes $|g| = 1.42$.
+of Section~\ref{sec:fourpath} prescribes $|g| \approx 1.42$.
 \emph{Both numbers point in the same direction}
 (reduce the coupling), and at the bundled inputs the
 direction-of-correction agreement is documented in the
@@ -1787,7 +1805,7 @@ regime to three significant digits.}
 
 \paragraph{Downstream cosmological role of $\vEW$.}
 The electroweak vacuum expectation value
-$\vEW = 246.22$\,GeV that this paper closes is also the
+$\vEW = 246.2186$\,GeV that this paper closes is also the
 load-bearing input of the leading layer in the companion
 nine-layer cosmological-constant
 construction~\cite{Paper4}: the hierarchy ratio
@@ -1819,7 +1837,7 @@ structural prediction for the hierarchy ratio
 where $\gamma\!=\!1/(N_{\mathrm{gen}}^{2}+1)\!=\!1/10$ is the
 chirality-sine of the System-$\mathcal R$ algebra and
 $d\!=\!4$ is the spacetime dimension. The observed ratio is
-$\vEW/M_{\mathrm{Pl}}\!=\!246.22/2.435\!\times\!10^{18}\!=\!1.013\!\times\!10^{-16}$,
+$\vEW/M_{\mathrm{Pl}}\!=\!246.2186/2.435\!\times\!10^{18}\!=\!1.0112\!\times\!10^{-16}$,
 giving a $1.3\%$ residual (PRECISE tier).
 Equation~\eqref{eq:p1_hierarchy} is independent of the
 HBR-action closure of this paper but compatible with it: the
@@ -1831,7 +1849,7 @@ form $\gamma^{d^{2}}$. The Sommerfeld saddle integral and the
 chirality-flip exponent $d^{2}\!=\!16$ are two independent
 structural derivations of the same quantity, providing a
 cross-validation of the closure. Reproducer:
-\path|src/verify_post_flip_theories_round3.py| in the
+\pyscript{emergent-gr-anisotropic-source-dm-de-repro}{src/verify_post_flip_theories_round3.py}{verify_post_flip_theories_round3} in the
 companion paper~\cite{Paper4}.
 
 \paragraph{Prong I details — $\Sb$-scan landing window
@@ -2000,7 +2018,7 @@ $\gamma\!=\!T^{*}\!=\!1/10$, and the carrier-sector anchor
 would be the load-bearing one.
 
 The cross-sector lock is materialised by the reproducer
-\path|src/verify_S_bounce_from_KQ_closed_potential.py| under the
+\pyown{src/verify_S_bounce_from_KQ_closed_potential.py}{verify_S_bounce_from_KQ_closed_potential} under the
 harmonic-closed $K,Q$ functionals of~\cite{Paper4B}, i.e.\ by
 inserting the closed expressions
 Eq.~\eqref{eq:KQ_harmonic_in_action_p1} below into the
@@ -2144,6 +2162,19 @@ C.~G.~Callan and S.~Coleman,
 \emph{Fate of the false vacuum. II. First quantum corrections},
 Physical Review~D \textbf{16}, 1762 (1977).
 
+\bibitem{AiAlexandreSarkar2024}
+W.-Y.~Ai, J.~Alexandre, and S.~Sarkar,
+\emph{False vacuum decay rates, more precisely},
+Physical Review~D \textbf{109}, 045010 (2024); arXiv:2312.04482.
+Systematic two-loop quantum corrections to the
+Coleman--Callan-Coleman bounce action via Gel'fand--Yaglom
+and Green's-function methods, giving $B^{(2)}\!=\!-16.42$ at
+$53.4\%$ of $B^{(1)}$ for the canonical scalar; the recent
+methodological baseline for two-loop bounce-action
+computations, against which the present defect-field two-loop
+sector is positioned as a distinct, defect-mediated interaction
+channel rather than as a fluctuation-determinant refinement.
+
 \bibitem{LandauLifshitz}
 L.~D.~Landau and E.~M.~Lifshitz,
 \emph{Quantum Mechanics: Non-relativistic Theory}, Volume 3 of
@@ -2266,8 +2297,8 @@ companion paper, 2026
 
 \bibitem{V5GConsensus}
 Carrier-defect coupling $3{+}1$ consensus bundle,
-\path|data/v5_g_consensus.json|
-(2026-04-25). Convergence audit of three regularization-distinct
+\path|data/v5_g_consensus.json|.
+Convergence audit of three regularization-distinct
 schemes (spectral cutoff; MS-bar Davydychev--Tausk; heat-kernel
 zeta on $S^{4}$) plus one algebraic self-consistency check
 (rigorous spectral sum / closed-form setting-sun) to
