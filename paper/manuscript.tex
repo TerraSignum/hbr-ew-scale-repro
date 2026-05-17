@@ -26,8 +26,8 @@
 
 % Clickable GitHub links for src/*.py citations (auto-generated)
 \newcommand{\ghrepo}[1]{https://github.com/TerraSignum/#1}
-% \nolinkurl gives a monospace, line-breakable rendering of the
-% short script-stem display text without competing with \href.
+% \nolinkurl gives a monospace, line-breakable rendering (handles
+% underscores) without creating an inner link competing with \href.
 \newcommand{\pyscript}[3]{%
   \href{\ghrepo{#1}/blob/main/#2}{\nolinkurl{#3}}}
 \newcommand{\repoOwn}{hbr-ew-scale-repro}
@@ -647,7 +647,7 @@ sector:
 with empirical residual $0.0010\%$ (strict-EXACT tier;
 audit \pyown{src/verify_S_bounce_structural_rational.py}{verify_S_bounce_structural_rational},
 output
-\path|outputs/verify_S_bounce_structural_rational.json|).
+\pyown{outputs/verify_S_bounce_structural_rational.json}{verify_S_bounce_structural_rational.json}).
 The leading integer
 $2\,d + N_{\mathrm{gen}}/\gamma\!=\!38$ counts two structural
 contributions (dimensional and generation-amplified by the
@@ -677,7 +677,7 @@ $\Sb=37.995389$ (\path|outputs/audit_eta_S_high_precision.json|)
 were committed before the EW-scale matching script
 \pyown{src/recompute_ew_scale.py}{recompute_ew_scale} consumed $\Sb$ as input.
 The bundled hash chain in
-\path|data/saddle_blindness_witness.json| records the
+\pyown{data/saddle_blindness_witness.json}{saddle_blindness_witness.json} records the
 per-file SHA-256 hashes and timestamps at the saddle freeze
 (field \texttt{saddle\_commit\_hash}, frozen at solver-output
 time) and at the matching freeze (field
@@ -812,7 +812,7 @@ $m_{\Xi}^{2}\in[0.1,\,100]$ scan.}
 A direct attack vector on the construction would be: ``the
 hidden $m_{\Xi}$ scale of the defect field is a tuning parameter
 that secretly absorbs the residual.'' The bundled
-\path|data/g_path_msbar.json| and the parent-corpus
+\pyown{data/g_path_msbar.json}{g_path_msbar.json} and the parent-corpus
 QFT-project synthesis verdict
 report a wide-grid scan of $m_{\Xi}^{2}$ across three orders of
 magnitude, $m_{\Xi}^{2}\in[0.1,\,100]$, finding $44$ numerical
@@ -1520,7 +1520,7 @@ seventh decimal digit of $\eta_{S}$ would close the gap. We
 therefore report a target-blind audit of the saddle-evaluation
 machinery; the audit script is bundled at
 \pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision} with the JSON certificate
-\path|outputs/eta_S_high_precision_audit.json|.
+\pyown{outputs/eta_S_high_precision_audit.json}{eta_S_high_precision_audit.json}.
 
 \paragraph{Method.} The audit verifies the saddle-evaluation
 machinery on the symmetric-quartic baseline
@@ -1580,7 +1580,7 @@ The role of the present baseline audit is to certify that the
 generic saddle-evaluation methodology is robust to
 \emph{eleven-decimal-digit} precision: the bundled multi-method
 audit (\pyown{src/audit_eta_S_high_precision.py}{audit_eta_S_high_precision}, output
-\path|outputs/eta_S_high_precision_audit.json|) cross-validates
+\pyown{outputs/eta_S_high_precision_audit.json}{eta_S_high_precision_audit.json}) cross-validates
 $\eta_{S}^{\mathrm{baseline}}$ against the closed-form
 $\pi/6\!=\!0.523\,598\,775\,598\,3$ across (i) BVP at three
 resolutions $\{200,400,800\}$, (ii) three independent
@@ -2037,7 +2037,7 @@ $R\!\in\![0.8315,1.0633]$ across the chirality flip
 $-16.85\%$ and the post-flip endpoint at $+6.33\%$ relative to
 the bundled $\Sb$. The bundled value sits at $R\!=\!1$ by
 EW calibration. Output:
-\path|outputs/verify_S_bounce_from_KQ_closed_potential.json|.
+\pyown{outputs/verify_S_bounce_from_KQ_closed_potential.json}{verify_S_bounce_from_KQ_closed_potential.json}.
 \begin{equation}
 \langle F\rangle(N)
 =F_{\rm pre}\cos^{2}\theta_{\rm chir}
@@ -2297,7 +2297,7 @@ companion paper, 2026
 
 \bibitem{V5GConsensus}
 Carrier-defect coupling $3{+}1$ consensus bundle,
-\path|data/v5_g_consensus.json|.
+\pyown{data/v5_g_consensus.json}{v5_g_consensus.json}.
 Convergence audit of three regularization-distinct
 schemes (spectral cutoff; MS-bar Davydychev--Tausk; heat-kernel
 zeta on $S^{4}$) plus one algebraic self-consistency check
